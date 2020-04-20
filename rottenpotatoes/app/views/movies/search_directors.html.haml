@@ -1,0 +1,16 @@
+-# in app/views/movies/search_directors.html.haml
+
+%table#movies.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Movies with Director #{@movie.director}
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title
+        %td= movie.rating
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
+
+
+= link_to 'Back to movie list', movies_path
